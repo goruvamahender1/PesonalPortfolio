@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/0e9e00ab56.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="header">
+        <div class="container">
+            <nav>
+                <h1 class="logo">Mahender.</h1>
+                <ul id="sidemenu">
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <i class="fas fa-times" onclick="closemenu()"></i>
+                </ul>
+                <i class="fas fa-bars" onclick="openmenu()"></i>
+            </nav>
+            <div class="header-text">
+                <h1>Hi, I'm Goruva Mahender</h1>
+            </div>
+        </div>
+    </div>
+    <!-- ---------------------about-------------------------- -->
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1"><img src="images/mahender1.png" alt=""></div>
+                <div class="about-col-2"><h1 class="sub-title">About Me</h1>
+                <p>Hi, I am Mahender. I hold a B.Tech degree in Electronics and Communication Engineering from <br> B V Raju Institute of Technology. I have knowledge in Python, Java, HTML and CSS. Seeking a beginner role to enhance and explore my technical knowledge gained in the last two years.
+                </p>
+                <div class="tab-titles">
+                    <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                    <p class="tab-links" onclick="opentab('education')">Education</p>
+                    <p class="tab-links" onclick="opentab('certifications')">Certifications</p>
+                    <p class="tab-links" onclick="opentab('projects')">Projects</p>
+
+                </div>
+                <div class="tab-contents active-tab" id="skills">
+                    <ol class="skills1">
+                        <li>Python</li>
+                        <li>Java</li>
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>Object Oriented Programming</li>
+                    </ol>
+                </div>
+                <div class="tab-contents" id="education">
+                    <ul>
+                        <li><span>Bachelor of Technology in Electronics and Communication Engineering</span><br> B V Raju Institute of Technology<br>Score- 8.23 CGPA</li>
+                        <li><span>Intermediate</span><br>Narayana Junior College <br>Score- 965/1000</li>
+                        <li><span>Secondary School Certificate</span><br>Swathi High School <br>Score- 9.5 CGPA</li>
+                    </ul>
+                </div>
+                <div class="tab-contents" id="certifications">
+                    <ol class="certifications1">
+                        <li>HackerRank Skills Certification - Problem Solving Basic</li>
+                        <li>HackerRank Skills Certification - Python Basic</li>
+                        <li>Programming For Everybody (Getting Started with Python) - Coursera</li>
+                    </ol>
+                </div>
+                <div class="tab-contents" id="projects">
+                    <ol class="projects1">
+                        <li><span class="first title">Pesonal Portfolio</span><br>Created a responsive Personal Portfolio Website using HTML, CSS, and JavaScript.<br>Features- &nbsp; About, Contact Form, Profile links and Download CV. <br><span class="link12">Github Link- &nbsp; <a class="github link">Click here</a></span></li><br>
+
+                        <li><span class="second title">Fashion MNIST Classification using CNN</span><br>The prime objective is to implement a CNN to perform image classification on the famous fashion MNIST dataset. <br> Steps: Data analysis, Model training, and Prediction </li>
+                    </ol>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+
+    
+
+
+    <!-- ---------------------------contact-------------------------- -->
+
+    <div id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="contact-left">
+                    <h1 class="sub-title">Contact Me</h1>
+                    <p><i class="fas fa-paper-plane"></i>goruvamahender123@gmail.com</p>
+                    <p><i class="fa-solid fa-phone"></i> 9704828900</p>
+                    <p><i class="fa-solid fa-location-pin"></i>Hyderabad, 500084</p>
+                    <div class="social-icons">
+                        <a href="https://www.hackerrank.com/Mahendergoruva96"><i class="fa-brands fa-hackerrank"></i></a>
+                        <a href="https://www.linkedin.com/in/goruva-mahender/"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="https://github.com/goruvamahender1"><i class="fa-brands fa-github"></i></a>
+                        <a href="https://www.instagram.com/mahender_goruva/"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+                    <a href="images/Goruva-Mahender.pdf" download class="btn btn2">Download CV</a>
+                </div>
+                <div class="contact-right">
+                    <form name="submit-to-google-sheet">
+                        <input type="text" name="Name" placeholder="Your Name" required>
+                        <input type="email" name="Email" placeholder="Your Email" required>
+                        <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                        <button type="submit" class="btn btn2">Submit</button>
+                    </form>
+                    <span id="msg"></span>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>Copyright &#169; Mahender.</p>
+        </div>
+    </div>
+    
+
+    <script>
+        var tablinks=document.getElementsByClassName("tab-links");
+        var tabcontents=document.getElementsByClassName("tab-contents");
+        function opentab(tabname){
+            for(tablink of tablinks){
+                tablink.classList.remove("active-link")
+            }
+            for(tabcontent of tabcontents){
+                tabcontent.classList.remove("active-tab")
+            }
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab");
+        }
+    </script>
+
+    <script>
+        var sidemenu=document.getElementById("sidemenu");
+        function openmenu(){
+            sidemenu.style.right="0";
+
+        }
+        function closemenu(){
+            sidemenu.style.right="-200px";
+        }
+    </script>
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbxjSp4WTnclpxu7HgOQqjoRPAvnFlf7Cvm3sdGnJIXEh5drvI_ac6PfP_V3JenW8fPD/exec'
+        const form = document.forms['submit-to-google-sheet']
+        const msg=document.getElementById("msg")
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => { msg.innerHTML="Message sent successfully"})
+            setTimeout(function(){msg.innerHTML=""},5000)
+            form.reset()
+
+            .catch(error => console.error('Error!', error.message))
+        })
+      </script>
+    
+</body>
+</html>
